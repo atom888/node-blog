@@ -11,5 +11,14 @@
   "dependencies": {
     "ejs": "^2.4.1",
     "express": "^4.13.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom888/node-blog.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/atom888/node-blog/issues"
+  },
+  "homepage": "https://github.com/atom888/node-blog#readme"
 }
