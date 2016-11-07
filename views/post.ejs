@@ -13,18 +13,35 @@
             padding-bottom: 20px;
         }
     </style>
+
+    // blog post
+app.get('/post/:id', (req, res) => {
+  // find the post in the `posts` array
+  const post = posts.filter((post) => {
+    return post.id == req.params.id
+  })[0]
+
+  // render the `post.ejs` template with the post content
+  res.render('post', {
+    author: post.author,
+    title: post.title,
+    body: post.body
+  })
+})
+
 </head>
 
 <body>
     <div class="container">
         <%- include('partials/navbar') %>
-        <div>
-            <h2>POST_TITLE</h2>
-            <p>by <a href="#">POST_AUTHOR</a></p>
 
-            <p>POST_CONTENT</p>
-            <hr>
-        </div>
+            <div>
+                <h2><%= title %></h2>
+                <p>by <a href="#"><%= author %></a></p>
+
+                <p><%= body %></p>
+                <hr>
+            </div>
         <%- include('partials/footer') %>
     </div>
 </body>
